@@ -1,0 +1,87 @@
+// CampusCart — dummyData.js
+export const dummyItems = [
+  {
+    id: 1,
+    title: "Engineering Mathematics Textbook (7th Ed)",
+    price: 450,
+    category: "Books",
+    condition: "Good",
+    sellerName: "Aarav Sharma",
+    avatar: "A",
+    verifiedText: "Verified Campus ID",
+    timeAgo: "2h ago",
+    image: "https://loremflickr.com/400/300/book?lock=1",
+    description: "K.A. Stroud Engineering Mathematics, 7th Edition. Good condition, no markings or highlights. Useful for first and second-year engineering courses.",
+    contact: "9876543210"
+  },
+  {
+    id: 2,
+    title: "Keychron K2 V2 Mechanical Keyboard",
+    price: 3200,
+    category: "Electronics",
+    condition: "Like New",
+    sellerName: "Neha Gupta",
+    avatar: "N",
+    verifiedText: "Verified Campus ID",
+    timeAgo: "5h ago",
+    image: "https://loremflickr.com/400/300/keyboard?lock=2",
+    description: "Keychron K2 V2 wireless mechanical keyboard with blue switches. Comes with original keycaps and a custom wooden wrist rest.",
+    contact: "8765432109"
+  },
+  {
+    id: 3,
+    title: "Scientific Calculator CASIO FX-991EX",
+    price: 800,
+    category: "Electronics",
+    condition: "Used",
+    sellerName: "Rohan Patel",
+    avatar: "R",
+    verifiedText: "Verified Campus ID",
+    timeAgo: "1d ago",
+    image: "https://loremflickr.com/400/300/calculator?lock=3",
+    description: "Classwiz scientific calculator, 552 functions. Used for one semester, in perfect working condition. Solar and battery-powered.",
+    contact: "7654321098"
+  },
+  {
+    id: 4,
+    title: "Complete Professional Drafting Set",
+    price: 350,
+    category: "Stationery",
+    condition: "Good",
+    sellerName: "Priya V.",
+    avatar: "P",
+    verifiedText: "Verified Campus ID",
+    timeAgo: "3d ago",
+    image: "https://loremflickr.com/400/300/stationery?lock=4",
+    description: "Complete professional drafting and drawing set. Includes compass, dividers, scales, and high-quality pencils.",
+    contact: "6543210987"
+  },
+  {
+    id: 5,
+    title: "White Chemistry Lab Coat - Size Medium",
+    price: 250,
+    category: "Lab Equipment",
+    condition: "Fair",
+    sellerName: "Sameer N.",
+    avatar: "S",
+    verifiedText: "Verified Campus ID",
+    timeAgo: "4d ago",
+    image: "https://loremflickr.com/400/300/clothing?lock=5",
+    description: "White laboratory coat, Size M. 100% cotton, flame resistant. Only used 3-4 times in chemistry lab. Has a small ink stain near the pocket.",
+    contact: "5432109876"
+  },
+  {
+    id: 6,
+    title: "Wooden Study Desk with Drawers",
+    price: 1500,
+    category: "Furniture",
+    condition: "Used",
+    sellerName: "Karan Johar",
+    avatar: "K",
+    verifiedText: "Verified Campus ID",
+    timeAgo: "1w ago",
+    image: "https://loremflickr.com/400/300/desk?lock=6",
+    description: "Sturdy wooden desk perfect for dorm rooms. Has two smooth-gliding drawers. Must pick up from North block.",
+    contact: "4321098765"
+  }
+];

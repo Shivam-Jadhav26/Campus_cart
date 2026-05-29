@@ -1,0 +1,352 @@
+/* ═══════════════════════════════════════
+   CampusCart — Login Page Redesign
+   Light, Modern, Premium UI
+   ═══════════════════════════════════════ */
+
+.container {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  /* Beautiful light mesh background matching the image */
+  background-color: #f0fdf4;
+  background-image: 
+    radial-gradient(at 10% 10%, #dbeafe 0, transparent 40%), 
+    radial-gradient(at 90% 10%, #fef3c7 0, transparent 40%), 
+    radial-gradient(at 50% 90%, #e0e7ff 0, transparent 40%);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  padding: 2rem 1rem;
+}
+
+.cardWrapper {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── Form Card ── */
+.formCard {
+  background: #ffffff;
+  border-radius: 32px;
+  padding: 3rem;
+  width: 100%;
+  box-shadow: 
+    0 20px 40px -15px rgba(0, 0, 0, 0.05),
+    0 0 0 1px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 10;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.logo {
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: #0f172a;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.04em;
+}
+
+.header h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.03em;
+}
+
+.subtext {
+  font-size: 0.95rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* ── Form & Inputs ── */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.labelRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.inputGroup label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #1e293b;
+  /* text-transform: uppercase; */
+  /* letter-spacing: 0.02em; */
+}
+
+.forgotBtn {
+  background: none;
+  border: none;
+  color: #b45309; /* Deep yellow/orange tone */
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.forgotBtn:hover {
+  color: #d97706;
+  text-decoration: underline;
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  width: 100%;
+  height: 52px;
+  padding: 0 3rem 0 1.25rem; /* space for icon on right */
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  font-size: 0.95rem;
+  color: #334155;
+  transition: all 0.2s ease;
+  outline: none;
+}
+
+.input::placeholder {
+  color: #94a3b8;
+}
+
+.input:focus {
+  border-color: #fbbf24;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(251, 191, 36, 0.15);
+}
+
+.inputIcon, .toggleBtn {
+  position: absolute;
+  right: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94a3b8;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.toggleBtn {
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.toggleBtn:hover {
+  color: #fbbf24;
+}
+
+/* ── Buttons ── */
+.submitBtn {
+  margin-top: 0.5rem;
+  width: 100%;
+  height: 54px;
+  background: #fcd34d; /* Premium Yellow */
+  color: #1e293b;
+  border: none;
+  border-radius: 16px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(251, 191, 36, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.submitBtn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  background: #fbbf24;
+  box-shadow: 0 6px 20px rgba(251, 191, 36, 0.4);
+}
+
+.submitBtn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.submitBtn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  filter: grayscale(0.3);
+}
+
+.devBypassBtn {
+  height: 48px;
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.devBypassBtn:hover {
+  background: #e2e8f0;
+  color: #1e293b;
+}
+
+/* ── Divider ── */
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 2rem 0;
+  color: #94a3b8;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.divider::before, .divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.divider span {
+  padding: 0 1rem;
+}
+
+/* ── OAuth ── */
+.oauthGroup {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.oauthBtn {
+  flex: 1;
+  height: 50px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  color: #1e293b;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+.oauthBtn:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  transform: translateY(-1px);
+}
+
+/* ── Footer ── */
+.registerLink {
+  text-align: center;
+  color: #64748b;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.registerLink a {
+  color: #1e293b;
+  text-decoration: none;
+  font-weight: 700;
+  margin-left: 0.25rem;
+  transition: color 0.2s;
+}
+
+.registerLink a:hover {
+  text-decoration: underline;
+}
+
+/* ── Trust Badges ── */
+.trustBadges {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  color: #94a3b8;
+}
+
+.badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.badge svg {
+  opacity: 0.5;
+}
+
+.badge span {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  opacity: 0.7;
+}
+
+/* ── Alerts ── */
+.errorMsg, .successMsg {
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  animation: slideIn 0.3s ease-out;
+}
+
+.errorMsg {
+  background: #fef2f2;
+  color: #ef4444;
+  border: 1px solid #fecaca;
+}
+
+.successMsg {
+  background: #f0fdf4;
+  color: #22c55e;
+  border: 1px solid #bbf7d0;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 576px) {
+  .formCard {
+    padding: 2.5rem 1.5rem;
+    border-radius: 24px;
+  }
+  .trustBadges {
+    gap: 1rem;
+  }
+}

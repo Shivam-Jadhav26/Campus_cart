@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+
+# Environment variables
+.env
+server/.env
+client/.env
+!.env.example
+!server/.env.example
+!client/.env.example
+
+# Build output
+client/dist/
+
+# Logs
+logs/
+server/logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Debug / test artifacts
+server/cookies.txt
+server/cookies_refreshed.txt
+server/login.json
+server/test_refresh.js
+
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# IDE
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+

@@ -1,0 +1,11 @@
+{
+  "name": "campuscart-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "install-client": "cd client && npm install",
+    "build-client": "cd client && npm run build",
+    "install-server": "cd server && npm install",
+    "build": "npm run install-client && npm run build-client"
+  }
+}

@@ -1,0 +1,451 @@
+/* ═══════════════════════════════════════
+   CampusCart — ItemDetails (Anti-Gravity)
+   ═══════════════════════════════════════ */
+
+.page {
+  min-height: calc(100vh - 64px);
+  background: linear-gradient(135deg, #FFF5EE 0%, #FFDAB9 100%);
+  color: #111827;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 6rem;
+}
+
+/* ── Breadcrumb ── */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+  padding: 0.5rem 0;
+}
+
+.breadcrumbLink {
+  color: #6b7280;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.breadcrumbLink:hover {
+  color: #111827;
+}
+
+.breadcrumbSep {
+  color: #9ca3af;
+  font-size: 0.9rem;
+}
+
+.breadcrumbCurrent {
+  color: #111827;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 400px;
+}
+
+/* ── Grid Layout ── */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+/* ── Image Section ── */
+.imageSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  position: sticky;
+  top: 100px;
+}
+
+.mainImageBox {
+  position: relative;
+  border-radius: 32px;
+  overflow: hidden;
+  background: #ffffff;
+  aspect-ratio: 4/3;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.mainImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.noImage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: #f3f4f6;
+}
+
+.soldBanner {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ef4444;
+  font-family: 'Lexend', sans-serif;
+  font-size: 3rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  z-index: 10;
+}
+
+.conditionTag {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: #ffffff;
+  color: #111827;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  z-index: 5;
+}
+
+.thumbRow {
+  display: flex;
+  gap: 1rem;
+  padding: 0.5rem;
+  overflow-x: auto;
+}
+
+.thumb {
+  width: 80px;
+  height: 80px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid transparent;
+  background: #fff;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.thumbActive {
+  border-color: #facc15;
+  box-shadow: 0 4px 15px rgba(250, 204, 21, 0.3);
+  transform: translateY(-2px);
+}
+
+.thumbImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── Details Section ── */
+.details {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-radius: 32px;
+  padding: 3rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+.categoryBadge {
+  display: inline-block;
+  padding: 0.4rem 1.25rem;
+  background: #f1f5f9;
+  color: #64748b;
+  border-radius: 9999px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  width: fit-content;
+}
+
+.title {
+  font-family: 'Lexend', sans-serif;
+  font-size: clamp(2rem, 3vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: #111827;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.price {
+  font-family: 'Lexend', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #a16207;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.section {
+  padding: 2rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.sectionTitle {
+  font-family: 'Lexend', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 1rem;
+}
+
+.desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.05rem;
+  color: #4b5563;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── Seller Card ── */
+.sellerCard {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  background: #f3f4f6;
+  border-radius: 16px;
+  margin: 1rem 0;
+}
+
+.sellerAvatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #111827;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.sellerInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.sellerLabel {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  color: #059669;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.sellerLabel::before {
+  content: '✔';
+}
+
+.sellerName {
+  font-family: 'Lexend', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #111827;
+}
+
+.sellerEmail {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* ── Actions ── */
+.actionGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.secondaryActions {
+  display: flex;
+  gap: 1rem;
+}
+
+.buyBtn {
+  width: 100%;
+  padding: 1.25rem;
+  background: #facc15;
+  color: #111827;
+  border: none;
+  border-radius: 16px;
+  font-family: 'Lexend', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(250, 204, 21, 0.3);
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.buyBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(250, 204, 21, 0.4);
+}
+
+.offerBtn {
+  flex: 1;
+  padding: 1.1rem;
+  background: #ffffff;
+  color: #111827;
+  border: 1px solid #d1d5db;
+  border-radius: 16px;
+  font-family: 'Lexend', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.offerBtn:hover {
+  background: #f9fafb;
+  border-color: #9ca3af;
+}
+
+.chatBtn {
+  flex: 1;
+  padding: 1.1rem;
+  background: #f1f5f9;
+  color: #111827;
+  border: none;
+  border-radius: 16px;
+  font-family: 'Lexend', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.chatBtn:hover {
+  background: #e2e8f0;
+}
+
+.ownerBadge {
+  padding: 1.25rem;
+  background: #f1f5f9;
+  border: 1px dashed #cbd5e1;
+  border-radius: 16px;
+  color: #4b5563;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  color: #6b7280;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-top: 1rem;
+  transition: all 0.2s ease;
+  width: fit-content;
+}
+
+.backLink:hover {
+  color: #111827;
+  transform: translateX(-5px);
+}
+
+/* ── Loading States ── */
+.stateBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10rem 2rem;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-top-color: #facc15;
+  border-radius: 50%;
+  animation: spin 0.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    gap: 2rem;
+  }
+
+  .details {
+    padding: 2rem 1.5rem;
+    border-radius: 24px;
+    margin-top: -3rem;
+    /* Overlaps the image on mobile */
+    z-index: 2;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .secondaryActions {
+    flex-direction: column;
+  }
+}
